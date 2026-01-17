@@ -38,7 +38,7 @@ export default function Header() {
             href="/contact"
             className="ml-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
           >
-            Contact
+            Hire Me!
           </Link>
         </div>
 
@@ -58,7 +58,7 @@ export default function Header() {
             <MobileLink href="/" onClick={() => setOpen(false)}>Home</MobileLink>
             <MobileLink href="/projects" onClick={() => setOpen(false)}>Projects</MobileLink>
             <MobileLink href="/about" onClick={() => setOpen(false)}>About</MobileLink>
-            <MobileLink href="/contact" onClick={() => setOpen(false)}>Contact</MobileLink>
+            <MobileLink href="/contact" onClick={() => setOpen(false)}>Hire Me!</MobileLink>
           </div>
         </div>
       )}

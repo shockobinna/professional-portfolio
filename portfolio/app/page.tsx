@@ -1,10 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
+import PageTransition from "./components/PageTransition"
 import { Briefcase, Layers, Sparkles } from "lucide-react"
 
 
 export default function Home() {
   return (
+    <PageTransition>
     <section className="animate-fade-in">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid items-center gap-12 md:grid-cols-2">
@@ -118,6 +120,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </PageTransition>
   )
 }
 

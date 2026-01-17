@@ -10,24 +10,6 @@ type Props = {
   }>
 }
 
-// // ✅ SEO per project
-// export async function generateMetadata(
-//   { params }: Props
-// ): Promise<Metadata> {
-//   const { slug } = await params
-//   const project = await getProjectBySlug(slug)
-
-//   if (!project) {
-//     return {
-//       title: "Project not found | David",
-//     }
-//   }
-
-//   return {
-//     title: `${project.title} | David`,
-//     description: project.description,
-//   }
-// }
 
 // ✅ SEO per project
 export async function generateMetadata(
