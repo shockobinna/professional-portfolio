@@ -12,22 +12,33 @@ type ProjectCardProps = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
-      className="
-        group
-        h-full
-        flex
-        flex-col
-        overflow-hidden
-        rounded-xl
-        border
-        bg-white
-        shadow-sm
+  className="
+    group
+    h-full
+    flex
+    flex-col
+    overflow-hidden
+    rounded-xl
+    border border-gray-200 dark:border-neutral-800
+    bg-white dark:bg-neutral-900
+    shadow-sm
+    transition-all duration-300
+    hover:-translate-y-1
+    hover:shadow-lg
+  "
+>
+
+
+      <div className="
+        h-1 w-full
+        bg-gradient-to-r
+        from-blue-600
+        to-indigo-600
         transition-all
         duration-300
-        hover:-translate-y-1
-        hover:shadow-lg
-      "
-    >
+        group-hover:opacity-90" 
+        />
+
       {/* Cover image */}
       {project.coverImage && (
         <div className="relative h-48 w-full overflow-hidden">
@@ -54,7 +65,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.title}
         </h3>
 
-        <p className="mt-2 line-clamp-3 text-sm text-gray-600">
+        <p className="mt-2 line-clamp-3 text-sm text-gray-600 dark:text-gray-400">
           {project.description}
         </p>
 
@@ -68,7 +79,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </span>
           ))}
         </div>
-
+        <div className="mt-auto pt-4">
         <Link
           href={`/projects/${project.slug}`}
           className="
@@ -83,6 +94,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         >
           View project →
         </Link>
+      </div>
       </div>
     </article>
   )
