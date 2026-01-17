@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
+import Header from "./components/Header"
+
 
 export const metadata: Metadata = {
   title: "David | Software Developer",
@@ -14,16 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <header className="border-b p-4">
-          <nav className="flex gap-4">
-            <Link href="/">Home</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/about">About</Link>
-          </nav>
-        </header>
-
-        <main>{children}</main>
+      <body className="bg-[var(--background)] text-[var(--foreground)]">
+        <Header/>
+        <main className="mx-auto max-w-6xl px-6 py-8">{children}</main>
       </body>
     </html>
   );
