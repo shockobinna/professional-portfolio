@@ -10,6 +10,25 @@ type Props = {
   }>
 }
 
+// // ✅ SEO per project
+// export async function generateMetadata(
+//   { params }: Props
+// ): Promise<Metadata> {
+//   const { slug } = await params
+//   const project = await getProjectBySlug(slug)
+
+//   if (!project) {
+//     return {
+//       title: "Project not found | David",
+//     }
+//   }
+
+//   return {
+//     title: `${project.title} | David`,
+//     description: project.description,
+//   }
+// }
+
 // ✅ SEO per project
 export async function generateMetadata(
   { params }: Props
@@ -23,11 +42,29 @@ export async function generateMetadata(
     }
   }
 
+  const title = project.seoTitle ?? `${project.title} | David`
+  const description = project.seoDescription ?? project.description
+
   return {
-    title: `${project.title} | David`,
-    description: project.description,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: project.coverImage
+        ? [
+            {
+              url: urlFor(project.coverImage)
+                .width(1200)
+                .height(630)
+                .url(),
+            },
+          ]
+        : [],
+    },
   }
 }
+
 
 // ✅ Page UI
 export default async function ProjectPage({ params }: Props) {

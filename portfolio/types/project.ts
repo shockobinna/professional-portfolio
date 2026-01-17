@@ -19,6 +19,8 @@ export type Project = {
   coverImage?: Image
   // 🎬 Demo video (optional)
   demoVideoUrl?: string
+  seoTitle?: string
+  seoDescription?: string
 }
 
 

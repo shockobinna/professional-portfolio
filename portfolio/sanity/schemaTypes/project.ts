@@ -44,5 +44,22 @@ export const project = defineType({
       type: "url",
       description: "Link to demo video (YouTube, Loom, MP4, etc.)",
     }),
+
+    defineField({
+      name: 'seoTitle',
+      title: 'SEO Title',
+      type: 'string',
+      description: 'Title used for search engines and social sharing',
+      validation: (Rule) => Rule.max(60),
+    }),
+    defineField({
+      name: 'seoDescription',
+      title: 'SEO Description',
+      type: 'text',
+      rows: 3,
+      description: 'Short description for Google & social previews',
+      validation: (Rule) => Rule.max(250),
+    }),
+
   ],
 });
