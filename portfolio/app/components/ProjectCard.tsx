@@ -12,21 +12,22 @@ type ProjectCardProps = {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
-  className="
-    group
-    h-full
-    flex
-    flex-col
-    overflow-hidden
-    rounded-xl
-    border border-gray-200 dark:border-neutral-800
-    bg-white dark:bg-neutral-900
-    shadow-sm
-    transition-all duration-300
-    hover:-translate-y-1
-    hover:shadow-lg
-  "
->
+        className="
+          group
+          h-full
+          flex
+          flex-col
+          overflow-hidden
+          rounded-xl
+          border border-gray-200 dark:border-neutral-800
+          bg-white dark:bg-neutral-900
+          text-gray-900 dark:text-gray-100
+          shadow-sm
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:shadow-lg
+        "
+      >
 
 
       <div className="
