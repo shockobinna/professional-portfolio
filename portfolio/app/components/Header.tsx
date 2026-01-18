@@ -58,7 +58,7 @@ export default function Header() {
             <MobileLink href="/" onClick={() => setOpen(false)}>Home</MobileLink>
             <MobileLink href="/projects" onClick={() => setOpen(false)}>Projects</MobileLink>
             <MobileLink href="/about" onClick={() => setOpen(false)}>About</MobileLink>
-            <MobileLink href="/contact" onClick={() => setOpen(false)}>Hire Me!</MobileLink>
+            <MobileLink href="/contact" onClick={() => setOpen(false)}>Contact</MobileLink>
           </div>
         </div>
       )}
