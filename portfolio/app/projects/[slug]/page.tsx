@@ -80,7 +80,7 @@ export default async function ProjectPage({ params }: Props) {
       {project.title}
     </h1>
 
-    <p className="mt-4 max-w-2xl text-base sm:text-lg text-gray-700">
+    <p className="mt-4 max-w-2xl text-base sm:text-lg text-gray-700 dark:text-gray-300">
       {project.description}
     </p>
 
