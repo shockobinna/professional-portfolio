@@ -58,11 +58,11 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return (
-    <main className="min-h-screen p-8">
+    <main className="min-h-screen px-4 py-6 sm:px-6 sm:py-8">
   <div className="mx-auto max-w-4xl">
     {/* Hero */}
     {project.coverImage && (
-      <div className="relative mb-8 h-[320px] w-full overflow-hidden rounded-2xl">
+      <div className="relative mb-6 h-[220px] sm:h-[280px] md:h-[320px] w-full overflow-hidden rounded-2xl">
         <Image
           src={urlFor(project.coverImage)
             .width(1200)
@@ -76,11 +76,11 @@ export default async function ProjectPage({ params }: Props) {
       </div>
     )}
 
-    <h1 className="text-4xl font-bold">
+    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
       {project.title}
     </h1>
 
-    <p className="mt-4 max-w-2xl text-lg text-gray-700">
+    <p className="mt-4 max-w-2xl text-base sm:text-lg text-gray-700">
       {project.description}
     </p>
 
@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }: Props) {
           href={project.demoVideoUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg bg-black px-6 py-3 text-sm font-medium text-white hover:bg-gray-800"
+          className="inline-flex items-center gap-2 rounded-lg bg-black sm:px-6 sm:py-3 px-5 py-3 text-sm font-medium text-white active:scale-[0.98] transition"
         >
           ▶ Watch demo
         </a>
@@ -104,11 +104,11 @@ export default async function ProjectPage({ params }: Props) {
         Tech stack
       </h3>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
         {project.tech.map((tech) => (
           <span
             key={tech}
-            className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700"
+            className="rounded-full bg-gray-100 px-3 py-1 text-xs sm:text-sm text-gray-700"
           >
             {tech}
           </span>
@@ -117,47 +117,5 @@ export default async function ProjectPage({ params }: Props) {
     </section>
   </div>
 </main>
-
-//     <main className="min-h-screen p-8">
-//       <div className="mx-auto max-w-3xl">
-//         <h1 className="text-3xl font-bold">
-//           {project.title}
-//         </h1>
-
-//         <p className="mt-4 text-gray-700">
-//           {project.description}
-//         </p>
-
-//         <div className="mt-8">
-//           <h3 className="text-lg font-semibold">
-//             Tech stack
-//           </h3>
-
-//           <div className="mt-3 flex flex-wrap gap-2">
-//             {project.tech.map((tech) => (
-//               <span
-//                 key={tech}
-//                 className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700"
-//               >
-//                 {tech}
-//               </span>
-//             ))}
-//           </div>
-//         </div>
-//         {project.demoVideoUrl && (
-//         <div className="mt-8">
-//           <a
-//             href={project.demoVideoUrl}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="inline-block rounded-lg bg-black px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-800"
-//           >
-//             ▶ Watch demo
-//           </a>
-//         </div>
-// )}
-
-//       </div>
-//     </main>
   )
 }
