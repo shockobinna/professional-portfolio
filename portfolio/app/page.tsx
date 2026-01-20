@@ -16,7 +16,7 @@ export default function Home() {
           <div className="flex justify-center md:justify-start">
             <div className="relative h-64 w-64 overflow-hidden rounded-2xl shadow-lg">
               <Image
-                src="/me.jpg"
+                src="/my pic.jpg"
                 alt="David"
                 fill
                 className="object-cover"
