@@ -24,6 +24,17 @@ export const project = defineType({
     }),
 
     defineField({
+      name: 'coverImage',
+      title: 'Cover Image',
+      type: 'image',
+      options: {
+    hotspot: true, // IMPORTANT for mobile cropping
+  },
+      description: 'Main project image. Recommended: 1200×600 or 1600×900 (16:9).',
+      
+    }),
+
+    defineField({
       name: "description",
       title: "Description",
       type: "text",

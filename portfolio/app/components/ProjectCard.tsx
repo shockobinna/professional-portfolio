@@ -41,7 +41,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         />
 
       {/* Cover image */}
-      {project.coverImage && (
+      {/* {project.coverImage && (
         <div className="relative h-48 w-full overflow-hidden">
           <Image
             src={urlFor(project.coverImage)
@@ -58,7 +58,31 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             "
           />
         </div>
+      )} */}
+      {project.coverImage && (
+        <div className="relative h-48 w-full overflow-hidden">
+          <Image
+            src={urlFor(project.coverImage)
+              .width(600)
+              .height(400)
+              .url()}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+
+          {/* Subtle overlay for consistency */}
+          <div
+            className="
+              absolute inset-0
+              bg-gradient-to-t
+              from-black/30
+              to-transparent
+            "
+          />
+        </div>
       )}
+
 
       {/* Content */}
       <div className="flex flex-1 flex-col p-5">

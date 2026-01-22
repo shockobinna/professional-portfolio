@@ -61,7 +61,7 @@ export default async function ProjectPage({ params }: Props) {
     <main className="min-h-screen px-4 py-6 sm:px-6 sm:py-8">
   <div className="mx-auto max-w-4xl">
     {/* Hero */}
-    {project.coverImage && (
+    {/* {project.coverImage && (
       <div className="relative mb-6 h-[220px] sm:h-[280px] md:h-[320px] w-full overflow-hidden rounded-2xl">
         <Image
           src={urlFor(project.coverImage)
@@ -74,7 +74,40 @@ export default async function ProjectPage({ params }: Props) {
           className="object-cover"
         />
       </div>
+    )} */}
+    {project.coverImage && (
+      <div className="
+        relative
+        mb-8
+        h-[220px] sm:h-[280px] md:h-[360px]
+        w-full
+        overflow-hidden
+        rounded-2xl
+      ">
+        <Image
+          src={urlFor(project.coverImage)
+            .width(1200)
+            .height(600)
+            .url()}
+          alt={project.title}
+          fill
+          priority
+          className="object-cover"
+        />
+
+        {/* Gradient overlay */}
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-t
+            from-black/50
+            via-black/20
+            to-transparent
+          "
+        />
+      </div>
     )}
+
 
     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
       {project.title}
