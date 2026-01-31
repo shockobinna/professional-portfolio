@@ -36,3 +36,30 @@ export async function getProjectBySlug(
   )
 }
 
+
+export async function getProjectsPaginated(
+  page: number,
+  pageSize: number
+) {
+  const start = (page - 1) * pageSize
+  const end = start + pageSize
+
+  return sanityClient.fetch(
+    `*[_type == "project"] | order(_createdAt desc)[$start...$end]{
+      _id,
+      title,
+      "slug":slug.current,
+      description,
+      tech,
+      coverImage
+    }`,
+    { start, end }
+  )
+}
+
+export async function getProjectsCount() {
+  return sanityClient.fetch(
+    `count(*[_type == "project"])`
+  )
+}
+
